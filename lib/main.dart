@@ -1,11 +1,13 @@
 
 
 import 'package:flutter/material.dart';
+import 'package:flutter_application_5/app_screen/alert.dart';
 import 'package:flutter_application_5/app_screen/cont.dart';
 import 'package:flutter_application_5/app_screen/enter_data.dart';
 
 import 'package:flutter_application_5/app_screen/firist_screen.dart';
 import 'package:flutter_application_5/app_screen/payment.dart';
+import 'package:flutter_application_5/app_screen/sign_up.dart';
 
 import 'app_screen/pay.dart';
 

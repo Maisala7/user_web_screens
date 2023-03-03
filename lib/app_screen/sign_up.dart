@@ -201,6 +201,7 @@ class SignupState extends State<Sign_up>{
                         height: screenHeight/9,
                         width: 300,
                         child: TextFormField(
+
                           textDirection:language==2? TextDirection.rtl:TextDirection.ltr,
                           controller: usernameController,
                           decoration: InputDecoration(
@@ -226,6 +227,7 @@ class SignupState extends State<Sign_up>{
                         height: screenHeight/11,
                         width: 300,
                         child: TextFormField(
+                          obscureText: true,
                           textDirection:language==2? TextDirection.rtl:TextDirection.ltr,
                           controller: passwordController,
                           decoration:  InputDecoration(
@@ -251,6 +253,7 @@ class SignupState extends State<Sign_up>{
                         height: screenHeight/10,
                         width: screenWidth,
                         child: TextFormField(
+                          obscureText: true,
                           textDirection:language==2? TextDirection.rtl:TextDirection.ltr,
                           controller: confirmController,
                           decoration:  InputDecoration(

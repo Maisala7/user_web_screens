@@ -136,6 +136,7 @@ class log_inState extends State<log_in>{
                            child:  Padding(
                              padding: const EdgeInsets.all(8.0),
                              child: TextFormField(
+                              obscureText: true,
                                textDirection:language==2? TextDirection.rtl:TextDirection.ltr,
                                controller: wordController,
                               decoration: InputDecoration(

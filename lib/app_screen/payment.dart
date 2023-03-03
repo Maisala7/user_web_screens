@@ -33,6 +33,27 @@ class PaymentState extends State<payment>{
         double screenHeight = MediaQuery.of(context).size.height;
         var box=cont(language);
    return Scaffold(
+     appBar:AppBar(
+      backgroundColor:Color.fromARGB(255, 11, 35, 55),
+       leading: Padding(
+         padding: const EdgeInsets.all(5.0),
+         child: ClipRRect(
+              borderRadius: BorderRadius.circular(25.0),
+              child: Image.asset(
+                'images/im.jpg.jpg',
+                 )),
+       ),
+       elevation: 0,
+        actions: [
+          CircleAvatar(
+            backgroundColor: Color.fromARGB(255, 135, 159, 196),
+            child: ClipRRect(
+            borderRadius: BorderRadius.circular(25.0),
+            child: Image.asset(
+              'images/im.jpg.jpg',
+          )),
+          ),
+         ] ),
      
       //background color
       body: Container(
@@ -77,7 +98,7 @@ class PaymentState extends State<payment>{
             ),
              Positioned(
               top: screenHeight/9,
-              left:language==1? screenWidth/20:screenWidth/2.1,
+              left:language==1? 200:650,
               child:Text(language==1?
                 'Renewal fees:':'رسوم تجديد البطاقه',
                 style: const TextStyle(
@@ -88,8 +109,8 @@ class PaymentState extends State<payment>{
                 ),
                ),
                 Positioned(
-              top: screenHeight/13,
-              left:language==1? screenWidth/1.6:screenWidth/10.7,
+              top: screenHeight/9,
+              left:language==1? 100:500,
               child:const Text(
                 '7000SDG',
                 style: TextStyle(
@@ -100,8 +121,8 @@ class PaymentState extends State<payment>{
                 ),
                ),
                Positioned(
-              top: screenWidth/4,
-              left:language==1? screenWidth/10.7:screenWidth/1.7,
+              top: screenWidth/9.5,
+              left:language==1? 200:700,
               child:Align(
               child:Text(language==1?
                 'invoice number:':'معرف الفاتوره',
@@ -114,8 +135,8 @@ class PaymentState extends State<payment>{
                ),
                ),
                Positioned(
-              top: screenWidth/4,
-              left:language==1? screenWidth/1.6:screenWidth/10.7,
+              top: screenWidth/9.5,
+              left:language==1?100:500,
               child:Align(
                 alignment:language==2? Alignment.topRight:Alignment.centerRight,
               child:const Text(
@@ -163,9 +184,9 @@ class PaymentState extends State<payment>{
             ) 
                 ),
                 Positioned(
-                  top:screenHeight/2.9,
-                  left: screenWidth/10.4,
-                  right: screenWidth/10.4,
+                  top:300,
+                  left: 650,
+                 // right: screenWidth/10.4,
                   child:Align(
                      alignment:language==2? Alignment.topRight:Alignment.topLeft,
                   child: Text(language==1?
@@ -184,67 +205,73 @@ class PaymentState extends State<payment>{
        SizedBox(
                      
                       height: screenHeight/8.5,
-                      width: screenWidth/2,
-                       child: TextFormField(
-                         textDirection:language==2? TextDirection.rtl:TextDirection.ltr,
-                        controller: processController,
-                        decoration: InputDecoration(
-                          hintText:language==1? " Enter process number":"ادخل رقم العمليه",
-                          hintTextDirection:language==2? TextDirection.rtl:TextDirection.ltr,
-                          labelStyle:  const TextStyle(color: Colors.grey),
-                          enabledBorder: const UnderlineInputBorder(
-                            borderSide: BorderSide(color: Color.fromARGB(255, 11, 35, 55)),
+                      width: screenWidth/5,
+                       child: Padding(
+                         padding: const EdgeInsets.only(left: 150,right: 150),
+                         child: TextFormField(
+                           textDirection:language==2? TextDirection.rtl:TextDirection.ltr,
+                          controller: processController,
+                          decoration: InputDecoration(
+                            hintText:language==1? " Enter process number":"ادخل رقم العمليه",
+                            hintTextDirection:language==2? TextDirection.rtl:TextDirection.ltr,
+                            labelStyle:  const TextStyle(color: Colors.grey),
+                            enabledBorder: const UnderlineInputBorder(
+                              borderSide: BorderSide(color: Color.fromARGB(255, 11, 35, 55)),
+                            ),
+                            focusedBorder: const UnderlineInputBorder(
+                              borderSide: BorderSide(color: Color.fromARGB(255, 11, 35, 55)),
+                            ),
                           ),
-                          focusedBorder: const UnderlineInputBorder(
-                            borderSide: BorderSide(color: Color.fromARGB(255, 11, 35, 55)),
-                          ),
-                        ),
-                         validator: (value) {
-                          if(value!.isEmpty ||
-                          value== null||
-                          value.length>=10){
-                            return ' process number must be 11 num or more ';
-                          }
-                          return null;
-                         
-                        },
-                      )),
+                           validator: (value) {
+                            if(value!.isEmpty ||
+                            value== null||
+                            value.length>=10){
+                              return ' process number must be 11 num or more ';
+                            }
+                            return null;
+                           
+                          },
+                      ),
+                       )),
                        Padding(padding:const EdgeInsets.only(left: 50,right: 50),
                         
-              child: ElevatedButton(
-                style: ButtonStyle(
-                backgroundColor: MaterialStateProperty.all<Color>(
-                            const  Color.fromARGB(255, 11, 35, 55)),
-                          //end coloring
-                          //start bordering
-                          shape:
-                              MaterialStateProperty.all<RoundedRectangleBorder>(
-                                  RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(18.0),
-                          )) ),
+              child: Padding(
+                padding: const EdgeInsets.only(left: 300,right: 300,top: 30),
+                child: ElevatedButton(
+                  style: ButtonStyle(
+                  backgroundColor: MaterialStateProperty.all<Color>(
+                              const  Color.fromARGB(255, 11, 35, 55)),
+                            //end coloring
+                            //start bordering
+                            shape:
+                                MaterialStateProperty.all<RoundedRectangleBorder>(
+                                    RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(18.0),
+                            )) ),
              
-              child: Text(language==1?
-                'ok':'تم',
-                style:const TextStyle(
-                  fontSize: 20.0,
-                  fontWeight: FontWeight.bold,
-                ),
-                ),
-              
-                onPressed: () {
-                  data.showMyDialog(
-                    context: context,
-                    title:language==1? 'Done' :'تم ',
-                    content:language==1?
-                    'You have successfully completed the first part of the renewal procedures.'
-                    'You will be contacted to complete the procedures at the Public Services Complex':
-                    ' لقد اكملت الجزء الاول من اجراءات التجديد بنجاح سيتم التواصل معك لاكمال الاجراءات في مجمع خدمات الجمهور', 
-                    page:payment(language)
-                  );
+                child: Text(language==1?
+                  'ok':'تم',
+                  style:const TextStyle(
+                    fontSize: 20.0,
+                    fontWeight: FontWeight.bold,
+                  ),
+                  ),
+                
+                  onPressed: () {
+                    data.showMyDialog(
+                      context: context,
+                      title:language==1? 'Done' :' ',
+                      content:language==1?
+                      'You have successfully completed the first part of the renewal procedures.'
+                      'You will be contacted to complete the procedures at the Public Services Complex':
+                      ' لقد اكملت الجزء الاول من اجراءات التجديد بنجاح سيتم التواصل معك لاكمال الاجراءات في مجمع خدمات الجمهور', 
+                      page:payment(language)
+                    );
 
-                  
-                },
-                ),
+                    
+                  },
+                  ),
+              ),
             ),
                 
        ] ),

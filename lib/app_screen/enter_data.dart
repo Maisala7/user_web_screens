@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_5/Api/database_helper.dart';
 import 'package:flutter_application_5/app_screen/payment.dart';
 
-List<String> list = <String>['khartoum', 'Omdurman', 'Bahry'];
+List<String> list = <String>['امدرمان', 'khartoum', 'Bahry'];
 String? SelectedItem1 ='blood type';
  List<String> listt = <String>[  'O+','O-','A+','A-','B+','B-','AB+','AB-'];
 String? SelectedItem2 ='blood type';
